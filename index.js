@@ -89,9 +89,9 @@ app.post('/api/persons', (request, response) => {
       error: 'name missing',
     });
   }
-  if (!body.phone) {
+  if (!body.number) {
     return response.status(400).json({
-      error: 'phone missing',
+      error: 'number missing',
     });
   }
   if (persons.find((p) => p.name === body.name)) {
@@ -103,7 +103,7 @@ app.post('/api/persons', (request, response) => {
   const person = {
     id: generateID(),
     name: body.name,
-    phone: body.phone,
+    number: body.number,
   };
 
   persons = persons.concat(person);
